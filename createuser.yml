@@ -6,11 +6,10 @@
     - fmoss
 
   tasks:
-#   - name: "Create user accounts and add users to groups"
-#     user:
-#       name: "{{ item }}"
-#       groups: "admin"
-#     with_items: "{{ users }}"
+  - name: "Create user accounts and add users to groups"
+    user:
+      name: "{{ item }}"
+    with_items: "{{ users }}"
 
   - name: "Add authorized keys"
     authorized_key:
