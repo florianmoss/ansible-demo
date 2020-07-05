@@ -1,0 +1,11 @@
+---
+
+- hosts: 192.168.50.11
+  vars:
+    - user:  "{{ username | default(None) }}"
+  tasks:
+- name: Remove the user entered by survey
+  user:
+    name: "{{ user }}"
+    state: absent
+    remove: yes
