@@ -4,8 +4,8 @@
   vars:
     - user:  "{{ username | default(None) }}"
   tasks:
-- name: Remove the user entered by survey
-  user:
-    name: "{{ user }}"
-    state: absent
-    remove: yes
+  - name: Remove the user entered by survey
+    user:
+      name: "{{ user }}"
+      state: absent
+      remove: yes
