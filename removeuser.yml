@@ -9,3 +9,8 @@
       name: "{{ user }}"
       state: absent
       remove: yes
+
+  - name: Recursively remove user directory
+    file:
+      path: "/home/{{ user }}"
+      state: absent
