@@ -12,10 +12,11 @@
       path: /var/log
       dest: "/tmp/{{ timestamp }}.logs.tgz"
       
-  - name: Store file into /tmp/fetched/host.example.com/tmp/somefile
-    fetch:
+  - name: Synchronization using rsync protocol (pull)
+    synchronize:
+      mode: pull
       src: "/tmp/{{ timestamp }}.logs.tgz"
-      dest: "/tmp/"
+      dest: /tmp/
     
 
 
