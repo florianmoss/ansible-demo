@@ -22,7 +22,7 @@
     synchronize: 
       src: "/tmp/{{ timestamp }}.logs.tgz"
       dest: /tmp/
-    delegate_to: 192.168.50.11
+    delegate_to: 192.168.50.12
     
 
 
