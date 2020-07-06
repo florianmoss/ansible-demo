@@ -14,9 +14,8 @@
     
   - name: Fetch stuff from the remote and save to local
     synchronize:  
-      src: {{ item }} 
+      src: "/tmp/{{ timestamp }}.logs.tgz"
       dest: /tmp/ 
       mode: pull
-    with_items:
-      - "/tmp/{{ timestamp }}.logs.tgz"
+
 
