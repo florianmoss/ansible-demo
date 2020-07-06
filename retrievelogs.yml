@@ -18,7 +18,7 @@
     synchronize: 
       src: "/tmp/{{ timestamp }}.txt"
       dest: /tmp/
-    delegate_to: {{ remote_server }}
+    delegate_to: "{{ remote_server }}"
     
 
 
