@@ -3,15 +3,11 @@
   become: yes
 
   tasks:
-    - name: Find logs
-      find:
-        paths: /var/log/
-        patterns: '*.log'
-        recurse: yes
-      register: _logs
+  - name: Fetch stuff from the remote and save to local
+    synchronize:  
+      src: {{ item }} 
+      dest: /tmp/ 
+      mode: pull
+    with_items:
+      - "var/log"
 
-    - name: Fetch logs
-      fetch:
-        src: "{{ item.path }}"
-        dest: /tmp/logs
-      with_items: "{{ _logs.files }}"
