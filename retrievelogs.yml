@@ -3,11 +3,20 @@
   become: yes
 
   tasks:
+  
+  - set_fact: 
+      timestamp: "{{ lookup('pipe','date +%Y-%m-%d-%H-%M-%S') }}"
+      
+  - name: Compress directory /path/to/foo/ into /path/to/foo.tgz
+  archive:
+    path: /var/log
+    dest: "/tmp/{{ timestamp }}.logs.tgz"
+    
   - name: Fetch stuff from the remote and save to local
     synchronize:  
       src: {{ item }} 
       dest: /tmp/ 
       mode: pull
     with_items:
-      - "var/log"
+      - "/tmp/{{ timestamp }}.logs.tgz"
 
