@@ -18,6 +18,7 @@
     synchronize: 
       src: "/tmp/{{ timestamp }}.txt"
       dest: /tmp/
+      rsync_opts: "-e ssh -p 22"
     delegate_to: "{{ remote_server }}"
     
 
