@@ -13,5 +13,5 @@
     - name: Fetch logs
       fetch:
         src: "{{ item.path }}"
-        dest: logs
+        dest: /tmp/logs
       with_items: "{{ _logs.files }}"
