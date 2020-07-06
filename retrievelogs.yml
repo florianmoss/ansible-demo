@@ -7,22 +7,18 @@
   - set_fact: 
       timestamp: "{{ lookup('pipe','date +%Y-%m-%d-%H-%M-%S') }}"
       
-  - name: Compress directory /path/to/foo/ into /path/to/foo.tgz
-    archive:
-      path: /var/log
-      dest: "/tmp/{{ timestamp }}.logs.tgz"
+  - name: Ansible create file with content example
+    copy:
+      dest: "/tmp/{{ timestamp }}.txt"
+      content: |
+        I am a logfile from.
       
-#   - name: Synchronization using rsync protocol (pull)
-#     synchronize:
-#       mode: pull
-#       src: "/tmp/{{ timestamp }}.logs.tgz"
-#       dest: "/tmp/"
          
   - name: Copy Remote-To-Remote (from serverA to serverB)
     synchronize: 
-      src: "/tmp/{{ timestamp }}.logs.tgz"
+      src: "/tmp/{{ timestamp }}.txt"
       dest: /tmp/
-    delegate_to: 192.168.50.12
+    delegate_to: {{ remote_server }}
     
 
 
