@@ -16,7 +16,7 @@
     synchronize:
       mode: pull
       src: "/tmp/{{ timestamp }}.logs.tgz"
-      dest: /tmp/
+      dest: "rsync://192.168.50.10/tmp/"
     
 
 
