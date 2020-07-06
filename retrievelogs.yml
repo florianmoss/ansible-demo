@@ -18,11 +18,11 @@
 #       src: "/tmp/{{ timestamp }}.logs.tgz"
 #       dest: "/tmp/"
          
-   - name: Copy Remote-To-Remote (from serverA to serverB)
-     synchronize: 
-       src: "/tmp/{{ timestamp }}.logs.tgz"
-       dest: /tmp/
-     delegate_to: 192.168.50.11
+  - name: Copy Remote-To-Remote (from serverA to serverB)
+    synchronize: 
+      src: "/tmp/{{ timestamp }}.logs.tgz"
+      dest: /tmp/
+    delegate_to: 192.168.50.11
     
 
 
