@@ -8,9 +8,9 @@
       timestamp: "{{ lookup('pipe','date +%Y-%m-%d-%H-%M-%S') }}"
       
   - name: Compress directory /path/to/foo/ into /path/to/foo.tgz
-  archive:
-    path: /var/log
-    dest: "/tmp/{{ timestamp }}.logs.tgz"
+    archive:
+      path: /var/log
+      dest: "/tmp/{{ timestamp }}.logs.tgz"
     
   - name: Fetch stuff from the remote and save to local
     synchronize:  
