@@ -1,0 +1,20 @@
+---
+
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  
+  tasks:
+    - name: create a new droplet
+      digital_ocean_droplet:
+        state: present
+        name: ansible
+        oauth_token: 12001a2a8e40c6a15013320b6734938e5e360a75c6d464a4f64c7bb47a6c5c92
+        size: 2gb
+        region: fra1
+        image: fedora-32-x64
+        wait_timeout: 500
+      register: my_droplet
+
+    - debug:
+        msg: "ID is {{ my_droplet.data.droplet.id }}, IP is {{ my_droplet.data.ip_address }}"
