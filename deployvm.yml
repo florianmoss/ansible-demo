@@ -9,7 +9,7 @@
       digital_ocean_droplet:
         state: present
         name: ansible
-        oauth_token: {{ api_token }}
+        oauth_token: "{{ api_token }}"
         size: 2gb
         region: fra1
         image: fedora-32-x64
