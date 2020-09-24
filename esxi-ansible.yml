@@ -6,10 +6,10 @@
       vmware_guest:
         hostname: 192.168.0.186
         username: "root"
-        password: "{{ esxi-password }}"
+        password: "{{ esxi_password }}"
         validate_certs: no
         folder: /ha-datacenter/vm
-        name: "{{ vm-name }}"
+        name: "{{ vm_name }}"
         state: poweredoff
         guest_id: rhel7_64Guest
         esxi_hostname: "cluster"
