@@ -1,0 +1,36 @@
+---
+- remote_user: root
+  tasks:
+   - name: Create a VM
+     vsphere_guest:
+       vcenter_hostname: 192.168.0.186
+       esxi:
+         datacenter: ha-datacenter
+         hostname: cluster
+       username: root
+       password: Athyde.08
+       validate_certs: no
+       guest: ansible-deployment
+       state: powered_off
+       vm_extra_config:
+         vcpu.hotadd: yes
+         mem.hotadd:  yes
+         notes: This is a test VM created using Ansible
+       vm_disk:
+         disk1:
+           size_gb: 10
+           type: thin
+           datastore: datastore1
+       vm_nic:
+         nic1:
+           type: vmxnet3
+           network: VM Network
+           network_type: standard
+       vm_hardware:
+         memory_mb: 1024
+         num_cpus: 1
+         osid: rhel8Guest
+         scsi: paravirtual
+         vm_cdrom:
+           type: "iso"
+           iso_path: "datastore1/rhel8.iso"
