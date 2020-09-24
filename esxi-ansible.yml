@@ -1,4 +1,7 @@
 ---
+# This playbook requires 2 variables to be added, done via Tower Survey:
+# esxi_password
+# vm_name
 - remote_user: root
   hosts: all
   tasks:
