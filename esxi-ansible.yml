@@ -11,7 +11,7 @@
         folder: /ha-datacenter/vm
         name: ansible-01
         state: poweredoff
-        guest_id: rhel8Guest
+        guest_id: rhel7_64Guest
         # This is hostname of particular ESXi server on which user wants VM to be deployed
         esxi_hostname: "cluster"
         disk:
