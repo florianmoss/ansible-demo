@@ -1,0 +1,44 @@
+# {{ ansible_managed }}
+[insights-client]
+# Example options in this file are the defaults
+
+# Change log level, valid options DEBUG, INFO, WARNING, ERROR, CRITICAL. Default DEBUG
+#loglevel=DEBUG
+
+# Attempt to auto configure with Satellite server
+auto_config=FALSE
+
+# Change authentication method, valid options BASIC, CERT. Default BASIC
+authmethod=BASIC
+
+# username to use when authmethod is BASIC
+username={{ redhat_portal_username }}
+
+# password to use when authmethod is BASIC
+password={{ redhat_portal_password }}
+
+#base_url=cert-api.access.redhat.com:443/r/insights
+
+# URL for your proxy.  Example: http://user:pass@192.168.100.50:8080
+#proxy=
+
+# Automatically update the dynamic configuration
+#auto_update=True
+
+# Obfuscate IP addresses
+#obfuscate=False
+
+# Obfuscate hostname. Requires obfuscate=True.
+#obfuscate_hostname=False
+
+# Display name for registration
+display_name={{ insights_display_name }}
+
+# Timeout for commands run during collection, in seconds
+#cmd_timeout=120
+
+# Timeout for HTTP calls, in seconds
+#http_timeout=120
+
+# Location of remove file
+#remove_file=/etc/insights-client/remove.conf
