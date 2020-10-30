@@ -1,4 +1,4 @@
-[all]
+[euwest]
 web1    ansible_host=192.168.50.11
 web2    ansible_host=192.168.50.12
 data1   ansible_host=192.168.50.13
@@ -16,5 +16,5 @@ data2
 webserver
 databases
 
-[numeric-example]
+[numericexample]
 data[1:2]
